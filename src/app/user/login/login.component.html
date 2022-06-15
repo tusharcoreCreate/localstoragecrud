@@ -1,0 +1,35 @@
+<div class="container justify-content-center mt-4">
+    <div class="row justify-content-center h-100">
+        <div class="col-sm-6">
+            <div class="card my-auto shadow">
+                <div class="card-header text-center">
+                    <h3 class="font-effect-fire">login</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label>You Have Already Account?</label>
+                        <a href="" class="ms-2 text-decoration-none " routerLink="/sign-up" routerLinkActive="activelink">signup</a>
+                    </div>
+                    <form [formGroup]="signin" (ngSubmit)="onsumbit()"> 
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputemail" formControlName="email" />
+                            <div *ngIf="!signin.get('email')?.valid && signin.get('email')?.touched">
+                                <small class="text-danger">please enter the email</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" />
+                            <div *ngIf="!signin.get('password')?.valid && signin.get('password')?.touched">
+                                <small class="text-danger">please enter the password</small>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
